@@ -1,32 +1,30 @@
+/* Base Styles */
 body {
   margin: 0;
   padding: 0;
   width: auto;
   text-align: center;
   background-color: #472d30;
-  /*background-color: rgb(156, 242, 179);*/
+  /* Main body background color */
+  color: #fff;
+  /* Default text color for the body/footer */
+  font-family: sans-serif;
 }
 
 .jumbotron {
   background-color: #eaac8b;
-  /*ackground-color: #CCF3EE;*/
+  /* Existing Jumbotron color */
   height: auto;
   padding-bottom: 0.5rem;
+  color: #472d30;
+  /* Text color for visibility on light background */
 }
 
-.profilepic {
-  size: 25%;
-}
 
 .introtext {
   font-family: cursive;
-}
-
-.navigation {
-  background-color: grey;
-  height: auto;
-  padding: 5px;
-  margin: auto;
+  padding: 0 10%;
+  /* Add some padding for better readability */
 }
 
 hr {
@@ -36,4 +34,113 @@ hr {
   padding: 0;
   width: 30%;
   color: #E80F88;
+  margin: 1rem auto;
+  /* Center the HR */
+}
+
+/* --- Responsive Grid Container --- */
+.grid-container {
+  display: grid;
+  /* Default: Single column for small screens */
+  grid-template-columns: 1fr;
+  gap: 20px;
+  /* Space between grid items */
+  padding: 20px;
+  background-color: #472d30;
+  /* Match body background */
+}
+
+.grid-item {
+  background-color: #a01a58;
+  /* A contrasting color for grid boxes */
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* --- Grid Media Queries (Mobile-First Approach) --- */
+
+/* Medium devices (tablets, 600px and up) */
+@media (min-width: 600px) {
+  .grid-container {
+    /* 2 columns for medium screens */
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large devices (desktops, 900px and up) */
+@media (min-width: 900px) {
+  .grid-container {
+    /* 3 columns for large screens */
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Extra Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .grid-container {
+    /* 4 columns max for extra large screens */
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+/* --- Footer Styles --- */
+.main-footer {
+  background-color: #2b1f21;
+  /* Darker color for the footer */
+  padding: 30px 20px 0;
+  color: #fff;
+  text-align: left;
+}
+
+.footer-links-grid {
+  display: grid;
+  gap: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column a {
+  color: #eaac8b;
+  /* Using the jumbotron color for links */
+  text-decoration: none;
+  line-height: 2.0;
+  /* Spacing for links */
+}
+
+.footer-column a:hover {
+  color: #E80F88;
+  /* Existing HR color for hover effect */
+}
+
+/* Footer Link Grid Media Queries (Adaptive 3 columns) */
+@media (min-width: 600px) {
+  .footer-links-grid {
+    /* 3 columns for medium screens and up. All columns grow equally. */
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1000px;
+    /* Max width to keep footer readable */
+    margin: 0 auto;
+    /* Center the link grid */
+  }
+
+  .main-footer {
+    text-align: center;
+    /* Center footer content on wider screens */
+  }
+}
+
+/* Copyright Section */
+.copyright-footer {
+  background-color: #1a1415;
+  /* Even darker color for the very bottom */
+  padding: 10px 0;
+  font-size: 0.8rem;
+  text-align: center;
 }
